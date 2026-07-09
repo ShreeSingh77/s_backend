@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 const userSchema = new Schema(
   {
     username: {
-      name: String,
+      type: String,
       required: true,
       unique: true,
       lowercase: true,
@@ -13,14 +13,14 @@ const userSchema = new Schema(
       index: true,
     },
     email: {
-      name: String,
+      type: String,
       required: true,
       unique: true,
       lowercase: true,
       trim: true,
     },
     fullName: {
-      name: String,
+      type: String,
       required: true,
       trim: true,
       index: true,
@@ -35,7 +35,7 @@ const userSchema = new Schema(
     watchHistory: [
       {
         type: Schema.Types.ObjectId,
-        ref: "video",
+        ref: "Video",
       },
     ],
     password: {
