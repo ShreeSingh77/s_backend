@@ -18,6 +18,9 @@ app.use(cookieParser());
 import userRouter from './routes/user.routes.js'
 
 //routs declearation
+app.get("/",(req, res) => {
+    res.send("Backend is runing");
+})
 app.use("/api/v1/users",userRouter)
 
 
